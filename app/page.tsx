@@ -212,13 +212,13 @@ export default function CalendarPage() {
   }, [currentDate])
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] p-6">
+    <div className="min-h-screen bg-[#FAFAFA] p-3 sm:p-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center text-sm text-gray-500 mb-6">Built for founders, builders, and investors in SF</div>
+        <div className="text-center text-sm text-gray-500 mb-4 sm:mb-6">Built for founders, builders, and investors in SF</div>
 
         <CalendarHeader currentMonth={monthName} onPreviousMonth={handlePreviousMonth} onNextMonth={handleNextMonth} />
 
-        <CalendarGrid days={calendarDays} />
+        <CalendarGrid days={calendarDays} monthName={monthName} />
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import type React from "react"
+import React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   title: "SF Tech Calendar",
   description: "Premium calendar for SF tech and startup events",
   generator: 'v0.dev',
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
     title: 'SF Tech Calendar',
@@ -26,6 +25,11 @@ export const metadata: Metadata = {
     title: 'SF Tech Calendar',
     description: 'Premium calendar for SF tech and startup events',
   },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({

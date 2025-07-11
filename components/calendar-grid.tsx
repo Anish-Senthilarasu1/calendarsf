@@ -3,15 +3,16 @@ import { CalendarDay } from "./calendar-day"
 
 interface CalendarGridProps {
   days: CalendarDayType[]
+  monthName: string
 }
 
 const dayHeaders = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
-export function CalendarGrid({ days }: CalendarGridProps) {
+export function CalendarGrid({ days, monthName }: CalendarGridProps) {
   return (
-    <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden">
-      {/* Day headers */}
-      <div className="grid grid-cols-7 border-b border-neutral-200">
+    <div className="sm:bg-white sm:border sm:border-neutral-200 bg-transparent border-0 rounded-lg overflow-hidden">
+      {/* Day headers - hidden on mobile */}
+      <div className="hidden sm:grid grid-cols-7 border-b border-neutral-200">
         {dayHeaders.map((day) => (
           <div
             key={day}
@@ -23,9 +24,9 @@ export function CalendarGrid({ days }: CalendarGridProps) {
       </div>
 
       {/* Calendar grid */}
-      <div className="grid grid-cols-7">
+      <div className="grid grid-cols-7 sm:gap-0 gap-[1px]">
         {days.map((day, index) => (
-          <CalendarDay key={index} day={day} />
+          <CalendarDay key={index} day={day} monthName={monthName} />
         ))}
       </div>
     </div>

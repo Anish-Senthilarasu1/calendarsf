@@ -17,11 +17,15 @@ export function EventCard({ event }: EventCardProps) {
     <div
       className={`p-1.5 sm:p-2 mb-1 border rounded-md text-xs transition-all hover:shadow-sm ${categoryColors[event.category]}`}
     >
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-2">
-        <div className="flex-1 min-w-0">
-          <div className="font-semibold text-gray-900 text-xs sm:text-sm leading-tight">
-            {event.time && `${event.time} | `}
-            {event.title}
+      <div className="flex flex-col gap-1">
+        <div className="flex-1">
+          <div className="font-semibold text-gray-900 text-xs leading-tight break-words">
+            {event.time && (
+              <span className="block text-gray-600 mb-0.5">
+                {event.time}
+              </span>
+            )}
+            <span className="block">{event.title}</span>
           </div>
           <div className="text-gray-600 mt-0.5 text-xs leading-tight">{event.host}</div>
           <div className="text-gray-500 mt-0.5 text-xs leading-tight">{event.location}</div>
@@ -31,7 +35,7 @@ export function EventCard({ event }: EventCardProps) {
             href={event.rsvpUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-700 hover:text-gray-900 underline decoration-dotted underline-offset-2 text-xs whitespace-nowrap mt-1 sm:mt-0"
+            className="text-gray-700 hover:text-gray-900 underline decoration-dotted underline-offset-2 text-xs self-start"
           >
             RSVP →
           </a>
