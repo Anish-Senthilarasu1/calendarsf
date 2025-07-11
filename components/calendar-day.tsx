@@ -49,7 +49,6 @@ export function CalendarDay({ day, monthName = "" }: CalendarDayProps) {
             className={`
               text-2xl font-light leading-none
               ${day.isCurrentMonth ? "text-gray-900" : "text-gray-500"}
-              ${day.date === 10 ? "bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg font-medium" : ""}
             `}
           >
             {day.date}

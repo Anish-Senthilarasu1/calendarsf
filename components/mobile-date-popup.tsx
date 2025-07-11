@@ -53,7 +53,7 @@ export function MobileDatePopup({ isOpen, onClose, date, events, monthName }: Mo
       
       {/* Popup */}
       <div 
-        className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl transition-transform duration-300 max-h-[80vh] overflow-hidden ${
+        className={`absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl transition-transform duration-300 max-h-[80vh] flex flex-col ${
           isVisible ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
@@ -63,7 +63,7 @@ export function MobileDatePopup({ isOpen, onClose, date, events, monthName }: Mo
         </div>
 
         {/* Header */}
-        <div className="px-6 pb-4 border-b border-gray-100">
+        <div className="px-6 pb-4 border-b border-gray-100 flex-shrink-0">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-2xl font-semibold text-gray-900">
@@ -86,7 +86,7 @@ export function MobileDatePopup({ isOpen, onClose, date, events, monthName }: Mo
         </div>
 
         {/* Events list */}
-        <div className="flex-1 overflow-y-auto px-6 py-4">
+        <div className="flex-1 overflow-y-auto px-6 py-4 min-h-0">
           {events.length === 0 ? (
             <div className="text-center py-8">
               <div className="text-gray-400 mb-2">
