@@ -18,7 +18,7 @@ const sampleEvents: Event[] = [
   },
   {
     id: "2",
-    title: "Magical AI Hackathon with Replicate x BuildShip x ElevenLabs x Cloudflare",
+    title: "Magical AI Hackathon",
     time: "All Day",
     host: "Replicate x BuildShip",
     location: "SF",
