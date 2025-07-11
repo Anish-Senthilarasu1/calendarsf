@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useCallback } from "react"
 import { CalendarHeader } from "@/components/calendar-header"
 import { CalendarGrid } from "@/components/calendar-grid"
 import type { Event, CalendarDay } from "@/types/event"
@@ -203,13 +203,13 @@ export default function CalendarPage() {
     return days
   }, [currentDate])
 
-  const handlePreviousMonth = () => {
+  const handlePreviousMonth = useCallback(() => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1))
-  }
+  }, [currentDate])
 
-  const handleNextMonth = () => {
+  const handleNextMonth = useCallback(() => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1))
-  }
+  }, [currentDate])
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] p-6">
