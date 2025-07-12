@@ -173,7 +173,8 @@ export default function CalendarPage() {
       const dayEvents = []
 
       // Add events to specific dates
-      if (date === 11) dayEvents.push(sampleEvents[0], sampleEvents[9]) // Eric Zhu Birthday, Deep Tech x The Matrix
+      if (date === 11) dayEvents.push(sampleEvents[9]) // Deep Tech x The Matrix
+      if (date === 12) dayEvents.push(sampleEvents[0]) // Eric Zhu Birthday
       if (date === 12) dayEvents.push(sampleEvents[1], sampleEvents[2], sampleEvents[3], sampleEvents[10]) // Magical AI Hackathon, WeaveHacks, AI Summit, Secret Soirée
       if (date === 13) dayEvents.push(sampleEvents[4]) // Manus AI Hike
       if (date === 15) dayEvents.push(sampleEvents[5], sampleEvents[13]) // Hello Self-Writing Internet, Agentic Browser Summit
